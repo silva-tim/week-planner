@@ -1,17 +1,14 @@
 let todos = [];
 
-const previousTodosJSON = localStorage.getItem(‘javascript-local-storage’);
+const previousTodosJSON = localStorage.getItem('javascript-local-storage');
 if (previousTodosJSON !== null) {
   todos = JSON.parse(previousTodosJSON);
 }
 function handleUnload(event) {
   const todosJSON = JSON.stringify(todos);
-  localStorage.setItem(‘javascript-local-storage’, todosJSON);
+  localStorage.setItem('javascript-local-storage', todosJSON);
 }
-window.addEventListener(‘beforeunload’, handleUnload);
-
-
-
+window.addEventListener('beforeunload', handleUnload);
 
 const $background = document.querySelector('.hidden');
 const $openModal = document.querySelector('.open-modal');
@@ -40,4 +37,30 @@ $form.addEventListener('submit', function (event) {
 
   todos.push(todo);
 
+});
+
+const $h3s = document.querySelector('.days');
+
+$h3s.addEventListener('click', function (event) {
+  if (event.target.className.includes('sunday')) {
+
+  }
+  if (event.target.className.includes('monday')) {
+
+  }
+  if (event.target.className.includes('tuesday')) {
+
+  }
+  if (event.target.className.includes('wednesday')) {
+
+  }
+  if (event.target.className.includes('thursday')) {
+
+  }
+  if (event.target.className.includes('friday')) {
+
+  }
+  if (event.target.className.includes('saturday')) {
+
+  }
 });

@@ -6,8 +6,7 @@
 
 .container {
   margin: 0 auto;
-  width: 900px;
-  background-color: lightblue;
+  width: 90%;
 }
 
 .row {
@@ -75,4 +74,39 @@ h1 {
 
 body {
   font-family: Ubuntu, sans-serif;
+}
+
+.column-seventh {
+  flex-basis: calc(100% / 10);
+  border: 1px solid black;
+  padding: 2%;
+  text-align: center;
+}
+
+.spacearound {
+  display: flex;
+  justify-content: space-around;
+}
+
+.marginbelow {
+  margin-bottom: 20px;
+}
+
+.fifth {
+  flex-basis: calc(100% / 5);
+}
+
+table {
+  border: 2px solid black;
+  margin: 0;
+  width: 70%;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: lightgray;
+}
+
+thead {
+  color: white;
+  background-color: black;
 }
