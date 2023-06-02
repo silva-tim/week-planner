@@ -30,8 +30,7 @@ textarea {
 .open-modal {
   font-size: 1.5rem;
   box-shadow: 5px 5px rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-  background-color: rgb(27, 27, 71);
+  background-color: rgb(162, 211, 252);
   border: 0;
   border-radius: 0.25rem;
   margin: 1rem;
@@ -112,6 +111,7 @@ table {
   border: 2px solid black;
   margin: 0;
   width: 70%;
+  border-spacing: 0;
 }
 
 tbody > tr:nth-child(odd) {
@@ -140,4 +140,30 @@ thead {
 .column-seventh:hover {
   background-color: lightgray;
   cursor: pointer;
+}
+
+tr {
+  height: 40px;
+}
+
+.edit {
+  background-color: rgb(162, 211, 252);
+  padding: 4px 8px;
+  box-shadow: 2px 2px black;
+  border-radius: 2px;
+}
+
+td {
+  padding-left: 6px;
+}
+
+th:first-child,
+td:first-child {
+  border-right: 2px solid black;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: darkblue;
+  color: white;
 }

@@ -1,32 +1,10 @@
-// data.js
-let todos = {
-  // todoArrMonday: [],
-  monday: [],
-  tuesday: [],
-  wednesday: [],
-  thursday: [],
-  friday: [],
-  saturday: [],
-  sunday: []
-};
-
-const previousTodosJSON = localStorage.getItem('javascript-local-storage');
-if (previousTodosJSON !== null) {
-  todos = JSON.parse(previousTodosJSON);
-}
-function handleUnload(event) {
-  const todosJSON = JSON.stringify(todos);
-  localStorage.setItem('javascript-local-storage', todosJSON);
-}
-window.addEventListener('beforeunload', handleUnload);
-//
-
 const $form = document.querySelector('form');
 const $background = document.querySelector('.hidden');
 const $openModalButton = document.querySelector('.open-modal');
 const $closeModalButton = document.querySelector('.close-modal');
 const $scheduleHeading = document.querySelector('#schedule-heading');
 const $h3s = document.querySelector('.days');
+/* global todos */
 
 $openModalButton.addEventListener('click', event => {
   $background.className = 'background';
@@ -34,12 +12,6 @@ $openModalButton.addEventListener('click', event => {
 $closeModalButton.addEventListener('click', event => {
   $background.className = 'background hidden';
 });
-
-// document.addEventListener('DOMContentLoaded', function (e) {
-//   for (let i = 0; i < data.entries.length; i++) {
-//     renderEntry(data.entries[i]);
-//   }
-// });
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -106,13 +78,18 @@ function renderEntry(array) {
     const $tr = document.createElement('tr');
     const $td1 = document.createElement('td');
     const $td2 = document.createElement('td');
+    const $td3 = document.createElement('td');
+    const $editButton = document.createElement('button');
+    $editButton.classList.add('edit');
+    $editButton.textContent = 'Update';
 
     $tr.classList.add('remove');
 
     $td1.textContent = array[i].time;
     $td2.textContent = array[i].description;
+    $td3.append($editButton);
 
-    $tr.append($td1, $td2);
+    $tr.append($td1, $td2, $td3);
     $tbody.append($tr);
   }
 }
