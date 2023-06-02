@@ -24,7 +24,7 @@
 }
 
 #description {
-  width: 100%;
+
 }
 
 .open-modal {
@@ -50,8 +50,8 @@
 
 .modal {
   background-color: rgb(255, 255, 255);
-  height: 15rem;
-  width: 32rem;
+  height: 18rem;
+  width: 44rem;
   border-radius: 0.2rem;
   text-align: center;
 }
@@ -64,15 +64,15 @@ h1 {
 }
 
 .close-modal {
-  font-size: 1.5rem;
-  color: rgb(255, 255, 255);
-  background-color: rgb(235, 93, 93);
-  border: 0;
-  border-radius: 0.25rem;
-  margin: 1rem;
-  padding: 0.7rem 2rem;
+  color: black;
+  background-color: white;
+  border-color: black;
 }
 
 .hidden {
   display: none;
+}
+
+body {
+  font-family: Ubuntu, sans-serif;
 }
