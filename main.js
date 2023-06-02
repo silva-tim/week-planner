@@ -1,4 +1,14 @@
-let todos = [];
+// data.js
+let todos = {
+  // todoArrMonday: [],
+  monday: [],
+  tuesday: [],
+  wednesday: [],
+  thursday: [],
+  friday: [],
+  saturday: [],
+  sunday: []
+};
 
 const previousTodosJSON = localStorage.getItem('javascript-local-storage');
 if (previousTodosJSON !== null) {
@@ -9,23 +19,28 @@ function handleUnload(event) {
   localStorage.setItem('javascript-local-storage', todosJSON);
 }
 window.addEventListener('beforeunload', handleUnload);
-
-const $background = document.querySelector('.hidden');
-const $openModal = document.querySelector('.open-modal');
-const $closeModal = document.querySelector('.close-modal');
-
-function openButton(event) {
-  $background.className = 'background';
-}
-
-function closeButton(event) {
-  $background.className = 'background hidden';
-}
-
-$openModal.addEventListener('click', openButton);
-$closeModal.addEventListener('click', closeButton);
+//
 
 const $form = document.querySelector('form');
+const $background = document.querySelector('.hidden');
+const $openModalButton = document.querySelector('.open-modal');
+const $closeModalButton = document.querySelector('.close-modal');
+const $scheduleHeading = document.querySelector('#schedule-heading');
+const $h3s = document.querySelector('.days');
+
+$openModalButton.addEventListener('click', event => {
+  $background.className = 'background';
+});
+$closeModalButton.addEventListener('click', event => {
+  $background.className = 'background hidden';
+});
+
+// document.addEventListener('DOMContentLoaded', function (e) {
+//   for (let i = 0; i < data.entries.length; i++) {
+//     renderEntry(data.entries[i]);
+//   }
+// });
+
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
 
@@ -35,32 +50,35 @@ $form.addEventListener('submit', function (event) {
     description: $form.elements.description.value
   };
 
-  todos.push(todo);
+  const weekday = todo.day.toLowerCase();
+  for (const key in todos) {
+    if (key === weekday) {
+      todos[key].push(todo);
+    }
+  }
 
 });
 
-const $h3s = document.querySelector('.days');
-
 $h3s.addEventListener('click', function (event) {
   if (event.target.className.includes('sunday')) {
-
+    $scheduleHeading.textContent = 'Schedule Events for Sunday';
   }
   if (event.target.className.includes('monday')) {
-
+    $scheduleHeading.textContent = 'Schedule Events for Monday';
   }
   if (event.target.className.includes('tuesday')) {
-
+    $scheduleHeading.textContent = 'Schedule Events for Tuesday';
   }
   if (event.target.className.includes('wednesday')) {
-
+    $scheduleHeading.textContent = 'Schedule Events for Wednesday';
   }
   if (event.target.className.includes('thursday')) {
-
+    $scheduleHeading.textContent = 'Schedule Events for Thursday';
   }
   if (event.target.className.includes('friday')) {
-
+    $scheduleHeading.textContent = 'Schedule Events for Friday';
   }
   if (event.target.className.includes('saturday')) {
-
+    $scheduleHeading.textContent = 'Schedule Events for Saturday';
   }
 });

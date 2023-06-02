@@ -22,14 +22,18 @@
   justify-content: center;
 }
 
-#description {
+textarea {
+  width: 80%;
+  resize: none;
 
+  /* height: 50%; */
 }
 
 .open-modal {
   font-size: 1.5rem;
+  box-shadow: 5px 5px rgb(0, 0, 0);
   color: rgb(255, 255, 255);
-  background-color: rgb(74, 74, 233);
+  background-color: rgb(27, 27, 71);
   border: 0;
   border-radius: 0.25rem;
   margin: 1rem;
@@ -49,7 +53,7 @@
 
 .modal {
   background-color: rgb(255, 255, 255);
-  height: 18rem;
+  height: 20rem;
   width: 44rem;
   border-radius: 0.2rem;
   text-align: center;
@@ -88,8 +92,16 @@ body {
   justify-content: space-around;
 }
 
+.marginabove {
+  margin-top: 20px;
+}
+
 .marginbelow {
   margin-bottom: 20px;
+}
+
+.marginright {
+  margin-right: 10px;
 }
 
 .fifth {
@@ -109,4 +121,9 @@ tbody > tr:nth-child(odd) {
 thead {
   color: white;
   background-color: black;
+}
+
+.add-entry-heading {
+  font-size: 2rem;
+  font-weight: 300;
 }
