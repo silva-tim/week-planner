@@ -59,26 +59,59 @@ $form.addEventListener('submit', function (event) {
 
 });
 
+function unRender() {
+  const $trs = document.querySelectorAll('tr.remove');
+  $trs.forEach(function (element) {
+    element.remove();
+  });
+}
+
 $h3s.addEventListener('click', function (event) {
+  unRender();
   if (event.target.className.includes('sunday')) {
     $scheduleHeading.textContent = 'Schedule Events for Sunday';
+    renderEntry(todos.sunday);
   }
   if (event.target.className.includes('monday')) {
     $scheduleHeading.textContent = 'Schedule Events for Monday';
+    renderEntry(todos.monday);
   }
   if (event.target.className.includes('tuesday')) {
     $scheduleHeading.textContent = 'Schedule Events for Tuesday';
+    renderEntry(todos.tuesday);
   }
   if (event.target.className.includes('wednesday')) {
     $scheduleHeading.textContent = 'Schedule Events for Wednesday';
+    renderEntry(todos.wednesday);
   }
   if (event.target.className.includes('thursday')) {
     $scheduleHeading.textContent = 'Schedule Events for Thursday';
+    renderEntry(todos.thursday);
   }
   if (event.target.className.includes('friday')) {
     $scheduleHeading.textContent = 'Schedule Events for Friday';
+    renderEntry(todos.friday);
   }
   if (event.target.className.includes('saturday')) {
     $scheduleHeading.textContent = 'Schedule Events for Saturday';
+    renderEntry(todos.saturday);
   }
 });
+
+const $tbody = document.querySelector('tbody');
+
+function renderEntry(array) {
+  for (let i = 0; i < array.length; i++) {
+    const $tr = document.createElement('tr');
+    const $td1 = document.createElement('td');
+    const $td2 = document.createElement('td');
+
+    $tr.classList.add('remove');
+
+    $td1.textContent = array[i].time;
+    $td2.textContent = array[i].description;
+
+    $tr.append($td1, $td2);
+    $tbody.append($tr);
+  }
+}
