@@ -18,35 +18,58 @@
     <main>
       <div class="row">
         <div class="column-full justifycenter">
-          <button type="button">Add Entry</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column-full justifycenter">
-          <div id="modal" class="modalOff">
-            <div class="popup">
-              <h2>Add Entry</h2>
-              <select name="day" id="day">
-                <option>Day of the Week</option>
-                <option>Sunday</option>
-                <option>Monday</option>
-                <option>Tuesday</option>
-                <option>Wednesday</option>
-                <option>Thursday</option>
-                <option>Friday</option>
-                <option>Saturday</option>
-              </select>
-              <label for="time">Time</label>
-              <input type="time" id="time"></input>
+          <button class="open-modal">Add Entry</button>
+          <div class="background hidden">
+            <div class="modal">
+
+              <!-- Add Entry header -->
+              <div class="row">
+                <div class="column-full">
+                  <h2>Add Entry</h2>
+                </div>
+              </div>
+              <!-- Day of the Week and time -->
+              <form action="">
+                <div class="row">
+                  <div class="column-full">
+                    <select name="day" id="day">
+                      <option>Day of the Week</option>
+                      <option>Sunday</option>
+                      <option>Monday</option>
+                      <option>Tuesday</option>
+                      <option>Wednesday</option>
+                      <option>Thursday</option>
+                      <option>Friday</option>
+                      <option>Saturday</option>
+                    </select>
+                    <label for="time">Time</label>
+                    <input type="time" id="time"></input>
+                  </div>
+                </div>
+                <!-- Text area -->
+                <div class="row">
+                  <div class="column-full">
+                    <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                  </div>
+                </div>
+
+                <!-- No button -->
+                <div class="row">
+                  <div class="column-full">
+                    <button class="close-modal">Submit</button>
+                  </div>
+                </div>
+
+              </form>
+
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="column-full">
-          <textarea name="description" id="description" rows="10"></textarea>
-        </div>
-      </div>
+
+
+
+
     </main>
     <script src="main.js"></script>
   </div>

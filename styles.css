@@ -16,7 +16,6 @@
 
 .column-full {
   flex-basis: 100%;
-  display: flex;
 }
 
 .justifycenter {
@@ -26,4 +25,54 @@
 
 #description {
   width: 100%;
+}
+
+.open-modal {
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(74, 74, 233);
+  border: 0;
+  border-radius: 0.25rem;
+  margin: 1rem;
+  padding: 0.7rem 2rem;
+}
+
+.background {
+  display: flex;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(50, 50, 50, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: rgb(255, 255, 255);
+  height: 15rem;
+  width: 32rem;
+  border-radius: 0.2rem;
+  text-align: center;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.close-modal {
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(235, 93, 93);
+  border: 0;
+  border-radius: 0.25rem;
+  margin: 1rem;
+  padding: 0.7rem 2rem;
+}
+
+.hidden {
+  display: none;
 }
