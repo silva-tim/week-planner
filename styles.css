@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 900px;
+  background-color: lightblue;
+}
+
+.row {
+  display: flex;
+}
+
+.column-full {
+  flex-basis: 100%;
+  display: flex;
+}
+
+.justifycenter {
+  display: flex;
+  justify-content: center;
+}
+
+#description {
+  width: 100%;
+}
