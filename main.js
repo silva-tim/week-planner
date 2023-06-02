@@ -57,6 +57,7 @@ $form.addEventListener('submit', function (event) {
     }
   }
 
+  $form.reset();
 });
 
 function unRender() {
